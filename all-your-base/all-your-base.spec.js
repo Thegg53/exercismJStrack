@@ -115,7 +115,7 @@ describe("Converter", () => {
     }).toThrow(new Error("Wrong input base"));
   });
 
-  xtest("wrong input_base base not integer", () => {
+  test("wrong input_base base not integer", () => {
     expect(() => {
       convert([0], 2.5);
     }).toThrow(new Error("Wrong input base"));
