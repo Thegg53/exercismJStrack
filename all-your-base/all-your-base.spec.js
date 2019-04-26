@@ -67,7 +67,7 @@ describe("Converter", () => {
     }).toThrow(new Error("Input has wrong format"));
   });
 
-  xtest("first base is one", () => {
+  test("first base is one", () => {
     expect(() => {
       convert([], 1, 10);
     }).toThrow(new Error("Wrong input base"));

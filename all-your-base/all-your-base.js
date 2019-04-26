@@ -7,6 +7,9 @@ function calculateValue(numb, base) {
 
 export const convert = (inputArr, inputBase, targetBase) => {
   // debugger;
+  if (inputBase === 1) {
+    throw new Error("Wrong input base");
+  }
   if (inputArr.length === 0 || (inputArr.length > 1 && inputArr[0] === 0)) {
     throw new Error("Input has wrong format");
   } else if (inputArr.length === 1 && inputArr[0] === 0) {
