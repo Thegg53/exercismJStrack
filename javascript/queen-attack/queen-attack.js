@@ -22,11 +22,9 @@ function calcKill(yw, xw, yb, xb) {
   if (xw == xb && yw == yb) {
     throw new Error("Queens cannot share the same space");
   }
-  if (xw == xb || yw == yb || yw - xw == yb - xb || yw + xw == -(yb - xb)) {
-    // console.log('can attack')
+  if (xw == xb || yw == yb || yw - xw == yb - xb || yw + xw == yb + xb) {
     return true;
   } else {
-    // console.log("cant attack");
     return false;
   }
 }
