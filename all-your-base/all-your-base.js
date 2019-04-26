@@ -9,11 +9,18 @@ export const convert = (inputArr, inputBase, targetBase) => {
   // debugger;
   if (inputArr.length === 0) {
     throw new Error("Input has wrong format");
+  } else if (inputArr.length === 1 && inputArr[0] === 0) {
+    return [0];
+  } else {
+    const nonZeroInputs = inputArr.filter(el => el > 0);
+    // console.log(nonZeroInputs);
+    if (nonZeroInputs.length == 0) {
+      throw new Error("Input has wrong format");
+    }
   }
   let v = calculateValue(inputArr, inputBase);
   // console.log(v);
   let oA = [];
-  if (!v) return [0];
   while (v / targetBase >= 1 / targetBase) {
     oA.push(v % targetBase);
     v = (v - oA[oA.length - 1]) / targetBase;

@@ -43,7 +43,7 @@ describe("Converter", () => {
     expect(convert([0], 10, 2)).toEqual([0]);
   });
 
-  xtest("multiple zeros", () => {
+  test("multiple zeros", () => {
     expect(() => {
       convert([0, 0, 0], 10, 2);
     }).toThrow(new Error("Input has wrong format"));
