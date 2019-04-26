@@ -10,7 +10,7 @@ export const convert = (inputArr, inputBase, targetBase) => {
   if (!inputBase || inputBase <= 1 || inputBase % 1 != 0) {
     throw new Error("Wrong input base");
   }
-  if (!targetBase || targetBase <= 1) {
+  if (!targetBase || targetBase <= 1 || targetBase % 1 != 0) {
     throw new Error("Wrong output base");
   }
   if (inputArr.length === 0 || (inputArr.length > 1 && inputArr[0] === 0)) {
