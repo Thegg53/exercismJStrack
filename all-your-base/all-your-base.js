@@ -13,8 +13,12 @@ export const convert = (inputArr, inputBase, targetBase) => {
     return [0];
   } else {
     const nonZeroInputs = inputArr.filter(el => el > 0);
+    const negativeInputs = inputArr.filter(el => el < 0);
     // console.log(nonZeroInputs);
     if (nonZeroInputs.length == 0) {
+      throw new Error("Input has wrong format");
+    }
+    if (negativeInputs.length >= 1) {
       throw new Error("Input has wrong format");
     }
   }
