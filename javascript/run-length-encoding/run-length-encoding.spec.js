@@ -9,7 +9,7 @@ describe("run-length encode a string", () => {
     expect(encode("XYZ")).toEqual("XYZ");
   });
 
-  xtest("encode string with no single characters", () => {
+  test("encode string with no single characters", () => {
     expect(encode("AABBBCCCC")).toEqual("2A3B4C");
   });
 
