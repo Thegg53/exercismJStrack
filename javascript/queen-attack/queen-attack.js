@@ -22,6 +22,13 @@ function calcKill(yw, xw, yb, xb) {
   if (xw == xb && yw == yb) {
     throw new Error("Queens cannot share the same space");
   }
+  if (xw == xb || yw == yb || yw - xw == yb - xb || yw + xw == -(yb - xb)) {
+    // console.log('can attack')
+    return true;
+  } else {
+    // console.log("cant attack");
+    return false;
+  }
 }
 
 export class QueenAttack {
@@ -34,8 +41,9 @@ export class QueenAttack {
       pos.white ? (this.white = pos.white) : (this.white = [0, 3]);
       pos.black ? (this.black = pos.black) : (this.black = [7, 3]);
     }
-    // displayBoard(pos.white[0], pos.white[1], pos.black[0], pos.black[1]);
-    calcKill(pos.white[0], pos.white[1], pos.black[0], pos.black[1]);
+    if (this.white[0] == this.black[0] && this.white[1] == this.black[1]) {
+      throw new Error("Queens cannot share the same space");
+    }
   }
   toString() {
     return displayBoard(
@@ -45,8 +53,7 @@ export class QueenAttack {
       this.black[1]
     );
   }
+  canAttack() {
+    return calcKill(this.white[0], this.white[1], this.black[0], this.black[1]);
+  }
 }
-//  (white, black) => {
-//   !white ? (white = [0, 3]) : white;
-//   !black ? (black = [7, 3]) : black;
-// };
