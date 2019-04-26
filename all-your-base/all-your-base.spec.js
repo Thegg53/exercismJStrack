@@ -49,7 +49,7 @@ describe("Converter", () => {
     }).toThrow(new Error("Input has wrong format"));
   });
 
-  xtest("leading zeros", () => {
+  test("leading zeros", () => {
     expect(() => {
       convert([0, 6, 0], 7, 10);
     }).toThrow(new Error("Input has wrong format"));
