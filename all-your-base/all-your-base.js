@@ -7,10 +7,10 @@ function calculateValue(numb, base) {
 
 export const convert = (inputArr, inputBase, targetBase) => {
   // debugger;
-  if (inputBase <= 1 || !inputBase || inputBase % 1 != 0) {
+  if (!inputBase || inputBase <= 1 || inputBase % 1 != 0) {
     throw new Error("Wrong input base");
   }
-  if (targetBase <= 1) {
+  if (!targetBase || targetBase <= 1) {
     throw new Error("Wrong output base");
   }
   if (inputArr.length === 0 || (inputArr.length > 1 && inputArr[0] === 0)) {
