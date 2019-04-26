@@ -109,7 +109,7 @@ describe("Converter", () => {
     }).toThrow(new Error("Wrong input base"));
   });
 
-  xtest("missing input base throws an error", () => {
+  test("missing input base throws an error", () => {
     expect(() => {
       convert([0]);
     }).toThrow(new Error("Wrong input base"));
