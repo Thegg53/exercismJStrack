@@ -91,19 +91,19 @@ describe("Converter", () => {
     }).toThrow(new Error("Wrong output base"));
   });
 
-  xtest("first base is negative", () => {
+  test("first base is negative", () => {
     expect(() => {
       convert([1], -2, 10);
     }).toThrow(new Error("Wrong input base"));
   });
 
-  xtest("second base is negative", () => {
+  test("second base is negative", () => {
     expect(() => {
       convert([1], 2, -7);
     }).toThrow(new Error("Wrong output base"));
   });
 
-  xtest("both bases are negative", () => {
+  test("both bases are negative", () => {
     expect(() => {
       convert([1], -2, -7);
     }).toThrow(new Error("Wrong input base"));
