@@ -34,10 +34,9 @@ export class QueenAttack {
     if (!pos) {
       this.white = [0, 3];
       this.black = [7, 3];
-      return;
     } else {
-      pos.white ? (this.white = pos.white) : (this.white = [0, 3]);
-      pos.black ? (this.black = pos.black) : (this.black = [7, 3]);
+      this.white = pos.white;
+      this.black = pos.black;
     }
     if (this.white[0] == this.black[0] && this.white[1] == this.black[1]) {
       throw new Error("Queens cannot share the same space");
