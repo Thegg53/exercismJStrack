@@ -33,7 +33,7 @@ describe("Converter", () => {
     expect(convert([3, 46, 60], 97, 73)).toEqual([6, 10, 45]);
   });
 
-  xtest("empty list", () => {
+  test("empty list", () => {
     expect(() => {
       convert([], 2, 10);
     }).toThrow(new Error("Input has wrong format"));

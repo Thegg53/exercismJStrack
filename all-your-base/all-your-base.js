@@ -6,16 +6,17 @@ function calculateValue(numb, base) {
 }
 
 export const convert = (inputArr, inputBase, targetBase) => {
-  debugger;
+  // debugger;
+  if (inputArr.length === 0) {
+    throw new Error("Input has wrong format");
+  }
   let v = calculateValue(inputArr, inputBase);
-  console.log(v);
   let oA = [];
   while (v / targetBase >= 1 / targetBase) {
     oA.push(v % targetBase);
     v = (v - oA[oA.length - 1]) / targetBase;
   }
   oA = oA.reverse();
-  console.log(oA);
   return oA;
 };
 
