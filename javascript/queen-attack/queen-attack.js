@@ -1,20 +1,19 @@
+function calcKill(xw, yw, xb, yb) {
+  if (xw == xb && yw == yb)
+    throw new Error("Queens cannot share the same space");
+}
+
 export class QueenAttack {
-  //   _white = [0, 3];
-  //   _black = [7, 3];
   constructor(pos) {
-    // console.log("this", this);
-    // this.white = [0, 3];
-    // this.black = [7, 3];
-    // {
-    //   (white = [0, 3]), (black = [7, 3]);
-    // }
     if (!pos) {
       this.white = [0, 3];
       this.black = [7, 3];
+      return;
     } else {
-      !pos.white ? (this.white = [0, 3]) : (this.white = pos.white);
-      !pos.black ? (this.black = [7, 3]) : (this.black = pos.black);
+      pos.white ? (this.white = pos.white) : (this.white = [0, 3]);
+      pos.black ? (this.black = pos.black) : (this.black = [7, 3]);
     }
+    calcKill(pos.white[0], pos.white[1], pos.black[0], pos.black[1]);
   }
 }
 //  (white, black) => {
