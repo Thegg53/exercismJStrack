@@ -11,12 +11,15 @@ export const convert = (inputArr, inputBase, targetBase) => {
     throw new Error("Input has wrong format");
   }
   let v = calculateValue(inputArr, inputBase);
+  // console.log(v);
   let oA = [];
+  if (!v) return [0];
   while (v / targetBase >= 1 / targetBase) {
     oA.push(v % targetBase);
     v = (v - oA[oA.length - 1]) / targetBase;
   }
   oA = oA.reverse();
+  // console.log(oA);
   return oA;
 };
 

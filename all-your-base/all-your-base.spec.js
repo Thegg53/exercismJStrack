@@ -39,7 +39,7 @@ describe("Converter", () => {
     }).toThrow(new Error("Input has wrong format"));
   });
 
-  xtest("single zero", () => {
+  test("single zero", () => {
     expect(convert([0], 10, 2)).toEqual([0]);
   });
 
