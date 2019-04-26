@@ -79,7 +79,7 @@ describe("Converter", () => {
     }).toThrow(new Error("Wrong output base"));
   });
 
-  xtest("first base is zero", () => {
+  test("first base is zero", () => {
     expect(() => {
       convert([], 0, 10);
     }).toThrow(new Error("Wrong input base"));
