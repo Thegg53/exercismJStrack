@@ -25,7 +25,8 @@
   },
   "scripts": {
     "test": "jest --no-cache ./*",
-    "testdebug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
+    "testDegugLinux": "node --inspect-brk node_modules/.bin/jest --runInBand",
+    "testDebugWindows": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
     "watch": "jest --no-cache --watch ./*",
     "lint": "eslint .",
     "lint-test": "eslint . && jest --no-cache ./* "
