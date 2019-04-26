@@ -19,7 +19,7 @@ describe("Queens", () => {
     expect(() => new QueenAttack(positioning)).toThrow(expectedError);
   });
 
-  xtest("toString representation", () => {
+  test("toString representation", () => {
     const positioning = { white: [2, 4], black: [6, 6] };
     const queens = new QueenAttack(positioning);
     const board = [
@@ -35,7 +35,7 @@ describe("Queens", () => {
     expect(queens.toString()).toEqual(board);
   });
 
-  xtest("toString representation edge case", () => {
+  test("toString representation edge case", () => {
     const positioning = { white: [7, 7], black: [0, 0] };
     const queens = new QueenAttack(positioning);
     const board = [
