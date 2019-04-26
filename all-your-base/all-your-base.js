@@ -14,11 +14,15 @@ export const convert = (inputArr, inputBase, targetBase) => {
   } else {
     const nonZeroInputs = inputArr.filter(el => el > 0);
     const negativeInputs = inputArr.filter(el => el < 0);
+    const inputDigitBiggerThanBase = inputArr.filter(el => el >= inputBase);
     // console.log(nonZeroInputs);
     if (nonZeroInputs.length == 0) {
       throw new Error("Input has wrong format");
     }
     if (negativeInputs.length >= 1) {
+      throw new Error("Input has wrong format");
+    }
+    if (inputDigitBiggerThanBase.length >= 1) {
       throw new Error("Input has wrong format");
     }
   }

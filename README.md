@@ -1,5 +1,7 @@
 exercismJStrack
 
+clear && npm test -- --watch
+
 <h2>Tests are Failing and You Don't Know Why</h2>
 
 From jest documentation:

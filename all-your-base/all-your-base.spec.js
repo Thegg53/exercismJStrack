@@ -61,7 +61,7 @@ describe("Converter", () => {
     }).toThrow(new Error("Input has wrong format"));
   });
 
-  xtest("invalid positive digit", () => {
+  test("invalid positive digit", () => {
     expect(() => {
       convert([1, 2, 1, 0, 1, 0], 2, 10);
     }).toThrow(new Error("Input has wrong format"));
