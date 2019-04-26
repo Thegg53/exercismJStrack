@@ -2,7 +2,7 @@ export const encode = sInput => {
   let aInput = sInput.split("");
   //   let iCountLetter = 1;
   let sOutput = "";
-  debugger;
+
   let previousLetter = "";
   for (let i = 0; i < aInput.length; i++) {
     if (i == 0) {
@@ -19,7 +19,14 @@ export const encode = sInput => {
         } else {
           let n = sOutput.substr(sOutput.length - 2, 1);
           n = parseInt(n) + 1;
-          sOutput = sOutput.substr(0, sOutput.length - 2) + n + aInput[i];
+          debugger;
+          if (!isNaN(sOutput.substr(sOutput.length - 3, 2))) {
+            n = sOutput.substr(sOutput.length - 3, 2);
+            n = parseInt(n) + 1;
+            sOutput = sOutput.substr(0, sOutput.length - 3) + n + aInput[i];
+          } else {
+            sOutput = sOutput.substr(0, sOutput.length - 2) + n + aInput[i];
+          }
         }
       }
     }
