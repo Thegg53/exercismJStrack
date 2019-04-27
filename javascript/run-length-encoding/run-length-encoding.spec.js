@@ -37,7 +37,7 @@ describe("run-length decode a string", () => {
     expect(decode("XYZ")).toEqual("XYZ");
   });
 
-  xtest("decode string with no single characters", () => {
+  test("decode string with no single characters", () => {
     expect(decode("2A3B4C")).toEqual("AABBBCCCC");
   });
 
