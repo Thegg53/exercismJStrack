@@ -1,30 +1,36 @@
-export const encode = sInput => {
-  let aInput = sInput.split("");
-  //   let iCountLetter = 1;
-  let sOutput = "";
-  debugger;
-  let previousLetter = "";
-  for (let i = 0; i < aInput.length; i++) {
-    if (i == 0) {
-      sOutput = aInput[i];
-    } else {
-      if (aInput[i] != previousLetter) {
-        //new letter
-        sOutput = sOutput + aInput[i];
-      } else {
-        //already existing
-        if (isNaN(sOutput.substr(sOutput.length - 2, 1))) {
-          //check if it has a number before the letter
-          sOutput = sOutput.substr(0, sOutput.length - 1) + "2" + aInput[i];
-        } else {
-          let n = sOutput.substr(sOutput.length - 2, 1);
-          n = parseInt(n) + 1;
-          sOutput = sOutput.substr(0, sOutput.length - 2) + n + aInput[i];
-        }
-      }
-    }
-    previousLetter = aInput[i];
+function arrToString(arr) {
+  let s = "";
+  arr.forEach(el => {
+    s = s + (el.length == 1 ? el : el.length + el.substr(0, 1));
+  });
+  return s;
+}
+
+function createArray(a) {
+  let aO = [];
+  let lastLetter = "";
+  for (let i = 0; i < a.length; i++) {
+    a[i] == lastLetter
+      ? (aO[aO.length - 1] = aO[aO.length - 1] + a[i])
+      : aO.push(a[i]);
+    lastLetter = a[i];
   }
+  // a.forEach(el => {
+  //   el == this.lastLetter
+  //     ? (this.aO[this.aO.length - 1] = this.aO[this.aO.length - 1] + el)
+  //     : this.aO.push(el);
+  //   this.lastLetter = el;
+  // }, this);
+  return aO;
+}
+
+export const encode = sInput => {
+  debugger;
+  let aInput = sInput.split("");
+
+  let a = createArray(aInput);
+
+  let sOutput = arrToString(a);
   return sOutput;
 };
 
