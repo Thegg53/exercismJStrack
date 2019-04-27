@@ -51,7 +51,7 @@ describe("run-length decode a string", () => {
     expect(decode("2 hs2q q2w2 ")).toEqual("  hsqq qww  ");
   });
 
-  xtest("decode string with lowercase characters", () => {
+  test("decode string with lowercase characters", () => {
     expect(decode("2a3b4c")).toEqual("aabbbcccc");
   });
 });
