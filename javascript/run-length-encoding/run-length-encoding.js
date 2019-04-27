@@ -28,4 +28,14 @@ export const encode = sInput => {
   return sOutput;
 };
 
-export const decode = sInput => {};
+export const decode = sInput => {
+  let regEx = /\d*\w|\s*/g;
+  let groups = sInput.match(regEx);
+  let sOutput = "";
+  console.log(groups);
+  for (let i = 0; i < groups.length; i++) {
+    sOutput = sOutput + groups[i];
+  }
+  console.log("sOutput", sOutput);
+  return sOutput;
+};

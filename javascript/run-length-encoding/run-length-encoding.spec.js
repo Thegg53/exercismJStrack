@@ -29,11 +29,11 @@ describe("run-length encode a string", () => {
 });
 
 describe("run-length decode a string", () => {
-  xtest("decode empty string", () => {
+  test("decode empty string", () => {
     expect(decode("")).toEqual("");
   });
 
-  xtest("decode string with single characters only", () => {
+  test("decode string with single characters only", () => {
     expect(decode("XYZ")).toEqual("XYZ");
   });
 
