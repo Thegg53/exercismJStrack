@@ -41,13 +41,13 @@ describe("run-length decode a string", () => {
     expect(decode("2A3B4C")).toEqual("AABBBCCCC");
   });
 
-  xtest("decode string with single characters mixed with repeated characters", () => {
+  test("decode string with single characters mixed with repeated characters", () => {
     expect(decode("12WB12W3B24WB")).toEqual(
       "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB"
     );
   });
 
-  xtest("decode string with multiple whitespaces", () => {
+  test("decode string with multiple whitespaces", () => {
     expect(decode("2 hs2q q2w2 ")).toEqual("  hsqq qww  ");
   });
 
