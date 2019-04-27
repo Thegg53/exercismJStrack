@@ -57,7 +57,7 @@ describe("run-length decode a string", () => {
 });
 
 describe("run-length encode and then decode", () => {
-  xtest("encode followed by decode gives original string", () => {
+  test("encode followed by decode gives original string", () => {
     expect(decode(encode("zzz ZZ  zZ"))).toEqual("zzz ZZ  zZ");
   });
 });
