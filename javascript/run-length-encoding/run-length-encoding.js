@@ -15,12 +15,6 @@ function createArray(a) {
       : aO.push(a[i]);
     lastLetter = a[i];
   }
-  // a.forEach(el => {
-  //   el == this.lastLetter
-  //     ? (this.aO[this.aO.length - 1] = this.aO[this.aO.length - 1] + el)
-  //     : this.aO.push(el);
-  //   this.lastLetter = el;
-  // }, this);
   return aO;
 }
 
