@@ -1,38 +1,57 @@
+function arrToString(arr) {
+  let s = "";
+  arr.forEach(el => {
+    s = s + (el.length == 1 ? el : el.length + el.substr(0, 1));
+  });
+  return s;
+}
+
+function createArray(a) {
+  let aO = [];
+  let lastLetter = "";
+  for (let i = 0; i < a.length; i++) {
+    a[i] == lastLetter
+      ? (aO[aO.length - 1] = aO[aO.length - 1] + a[i])
+      : aO.push(a[i]);
+    lastLetter = a[i];
+  }
+  return aO;
+}
+
 export const encode = sInput => {
   let aInput = sInput.split("");
-  //   let iCountLetter = 1;
-  let sOutput = "";
 
-  let previousLetter = "";
-  for (let i = 0; i < aInput.length; i++) {
-    if (i == 0) {
-      sOutput = aInput[i];
-    } else {
-      if (aInput[i] != previousLetter) {
-        //new letter
-        sOutput = sOutput + aInput[i];
-      } else {
-        //already existing
-        if (isNaN(sOutput.substr(sOutput.length - 2, 1))) {
-          //check if it has a number before the letter
-          sOutput = sOutput.substr(0, sOutput.length - 1) + "2" + aInput[i];
-        } else {
-          let n = sOutput.substr(sOutput.length - 2, 1);
-          n = parseInt(n) + 1;
-          debugger;
-          if (!isNaN(sOutput.substr(sOutput.length - 3, 2))) {
-            n = sOutput.substr(sOutput.length - 3, 2);
-            n = parseInt(n) + 1;
-            sOutput = sOutput.substr(0, sOutput.length - 3) + n + aInput[i];
-          } else {
-            sOutput = sOutput.substr(0, sOutput.length - 2) + n + aInput[i];
-          }
-        }
-      }
-    }
-    previousLetter = aInput[i];
-  }
+  let a = createArray(aInput);
+
+  let sOutput = arrToString(a);
   return sOutput;
 };
 
-export const decode = sInput => {};
+export const decode = sInput => {
+  let regEx = /\d*\s|\d*\w/g;
+  let groups = sInput.match(regEx); //split when a new letter or whitespace is found
+
+  let sOutput = "";
+  if (groups) {
+    for (let i = 0; i < groups.length; i++) {
+      let s = "";
+
+      if (groups[i].length > 1) {
+        //if the group has length more than one, there is/are numbers and then the character
+        let j = 0;
+        let n = parseInt(groups[i].substring(0, groups[i].length - 1));
+        while (j < n) {
+          debugger;
+          s = s + groups[i].substring(groups[i].length - 1);
+          j++;
+        }
+      } else {
+        //if the length of the group is one, then the group is just the character we want
+        s = groups[i];
+      }
+      sOutput = sOutput + s;
+    }
+  }
+  console.log("sOutput", sOutput);
+  return sOutput;
+};
