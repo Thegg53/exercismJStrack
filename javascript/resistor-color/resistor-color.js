@@ -1,13 +1,6 @@
-export const colorCode = sColor => {
-  let index = 0;
-  COLORS.find((el, idx) => {
-    index = idx;
-    return el === sColor;
-  });
-  return index;
-};
+export { colorCode, COLORS };
 
-export const COLORS = [
+const COLORS = [
   "black",
   "brown",
   "red",
@@ -19,3 +12,5 @@ export const COLORS = [
   "grey",
   "white"
 ];
+
+const colorCode = sColor => COLORS.indexOf(sColor);
