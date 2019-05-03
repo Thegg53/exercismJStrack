@@ -6,6 +6,9 @@ export class Triangle {
     }
 
     kind() {
-        return 'equilateral'
+        if (this.a == this.b || this.a == this.c) {
+            return this.b == this.c ? 'equilateral' : 'ísosceles'
+        } else if (this.b == this.c) return 'isosceles'
+        // return 'equilateral'
     }
 }
