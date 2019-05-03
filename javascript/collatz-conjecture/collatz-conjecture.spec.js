@@ -9,11 +9,11 @@ describe('steps()', () => {
     expect(steps(16)).toEqual(4);
   });
 
-  xtest('even and odd steps', () => {
+  test('even and odd steps', () => {
     expect(steps(12)).toEqual(9);
   });
 
-  xtest('Large number of even and odd steps', () => {
+  test('Large number of even and odd steps', () => {
     expect(steps(1000000)).toEqual(152);
   });
 
