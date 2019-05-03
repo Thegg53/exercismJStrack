@@ -14,9 +14,7 @@ const COLORS = [
 ];
 
 const value = aColors => {
-  //   return sColors;
   let sOutput = ``;
   aColors.forEach(el => (sOutput = sOutput + COLORS.indexOf(el)));
-  let nOutput = parseInt(sOutput);
-  return nOutput;
+  return parseInt(sOutput);
 };
