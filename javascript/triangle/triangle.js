@@ -6,7 +6,7 @@ export class Triangle {
     }
 
     kind() {
-        if (this.a <= 0 || this.b <= 0 || this.c <= 0) {
+        if (this.a <= 0 || this.b <= 0 || this.c <= 0 || (this.a > this.b + this.c || this.b > this.a + this.c || this.c > this.b + this.a)) {
             throw '';
         }
         if (this.a == this.b || this.a == this.c) {
