@@ -5,14 +5,13 @@ const annotate = (iA) => {
     let nRows = iA.length;
     if (iA.length) {
         let nCols = iA[0].length;
-        debugger;
         for (let i = 0; i < nRows; i++) {
             let aRow = [];
             if (i === 0) {//first row
                 for (let j = 0; j < nCols; j++) {
                     if (j == 0) { //first Col
                         let n = 0;
-                        if (nRows === 1) {
+                        if (nRows === 1) { //in the case that we only have one line..... that is a stupid game, but I have to pass the test :( 
                             n = calc([[0, 1]], iA);
                         } else if (nRows > 1) {
                             n = calc([[0, 1], [1, 0], [1, 1]], iA);
@@ -20,15 +19,15 @@ const annotate = (iA) => {
                         iA[i].substr(j, 1) != '*' ? aRow.push(n) : aRow.push('*');
                     } else if (j < nCols - 1) { //middle cols
                         let n = 0;
-                        if (nRows === 1) {
+                        if (nRows === 1) { //in the case that we only have one line..... that is a stupid game, but I have to pass the test :( 
                             n = calc([[0, j - 1], [0, j + 1]], iA);
                         } else if (nRows > 1) {
                             n = calc([[0, j - 1], [0, j + 1], [1, j - 1], [1, j], [1, j + 1]], iA);
                         }
                         iA[i].substr(j, 1) != '*' ? aRow.push(n) : aRow.push('*');
-                    } else { //last cols
+                    } else { //last col
                         let n = 0;
-                        if (nRows === 1) {
+                        if (nRows === 1) { //in the case that we only have one line..... that is a stupid game, but I have to pass the test :( 
                             n = calc([[0, j - 1]], iA);
                         } else if (nRows > 1) {
                             n = calc([[0, j - 1], [1, j], [1, j - 1]], iA);
@@ -45,7 +44,7 @@ const annotate = (iA) => {
                     } else if (j < nCols - 1) { //middle cols
                         let n = calc([[i - 1, j - 1], [i - 1, j], [i - 1, j + 1], [i, j - 1], [i, j + 1], [i + 1, j - 1], [i + 1, j], [i + 1, j + 1]], iA);
                         iA[i].substr(j, 1) != '*' ? aRow.push(n) : aRow.push('*');
-                    } else { //last cols
+                    } else { //last col
                         let n = calc([[i, j - 1], [i - 1, j], [i + 1, j], [i + 1, j - 1], [i - 1, j - 1]], iA);
                         iA[i].substr(j, 1) != '*' ? aRow.push(n) : aRow.push('*');
                     }
@@ -59,7 +58,7 @@ const annotate = (iA) => {
                     } else if (j < nCols - 1) { //middle cols
                         let n = calc([[i, j - 1], [i, j + 1], [i - 1, j - 1], [i - 1, j], [i - 1, j + 1]], iA);
                         iA[i].substr(j, 1) != '*' ? aRow.push(n) : aRow.push('*');
-                    } else { //last cols
+                    } else { //last col
                         let n = calc([[i, j - 1], [i - 1, j - 1], [i - 1, j]], iA);
                         iA[i].substr(j, 1) != '*' ? aRow.push(n) : aRow.push('*');
                     }
