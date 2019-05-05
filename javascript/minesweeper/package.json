@@ -27,7 +27,9 @@
     "test": "jest --no-cache ./*",
     "watch": "jest --no-cache --watch ./*",
     "lint": "eslint .",
-    "lint-test": "eslint . && jest --no-cache ./* "
+    "lint-test": "eslint . && jest --no-cache ./* ",
+    "testDebugLinux": "node --inspect-brk node_modules/.bin/jest --runInBand",
+    "testDebugWindows": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand"
   },
   "license": "MIT",
   "dependencies": {}

@@ -37,7 +37,7 @@ describe(')', () => {
     expect(annotate(input)).toEqual(expected);
   });
 
-  xtest('handles mine surrounded by spaces', () => {
+  test('handles mine surrounded by spaces', () => {
     const input = [
       '   ',
       ' * ',
@@ -51,7 +51,7 @@ describe(')', () => {
     expect(annotate(input)).toEqual(expected);
   });
 
-  xtest('handles space surrounded by mines', () => {
+  test('handles space surrounded by mines', () => {
     const input = [
       '***',
       '* *',
@@ -65,7 +65,7 @@ describe(')', () => {
     expect(annotate(input)).toEqual(expected);
   });
 
-  xtest('handles horizontal line', () => {
+  test('handles horizontal line', () => {
     const input = [' * * '];
     const expected = ['1*2*1'];
     expect(annotate(input)).toEqual(expected);
