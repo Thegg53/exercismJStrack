@@ -1,4 +1,4 @@
-export { value, COLORS };
+
 
 const COLORS = [
   "black",
@@ -13,8 +13,4 @@ const COLORS = [
   "white"
 ];
 
-const value = aColors => {
-  let sOutput = ``;
-  aColors.forEach(el => (sOutput = sOutput + COLORS.indexOf(el)));
-  return parseInt(sOutput);
-};
+export const value = aColors => Number(aColors.map(el => COLORS.indexOf(el)).join(''))
