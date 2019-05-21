@@ -2,12 +2,12 @@ export { Character, abilityModifier };
 
 class Character {
     constructor() {
-        this.strength = Math.floor(Math.random() * 15 + 3);
-        this.dexterity = Math.floor(Math.random() * 15 + 3);
-        this.constitution = Math.floor(Math.random() * 15 + 3);
-        this.intelligence = Math.floor(Math.random() * 15 + 3);
-        this.wisdom = Math.floor(Math.random() * 15 + 3);
-        this.charisma = Math.floor(Math.random() * 15 + 3);
+        this.strength = Character.rollAbility();//Math.floor(Math.random() * 15 + 3);
+        this.dexterity = Character.rollAbility();
+        this.constitution = Character.rollAbility();
+        this.intelligence = Character.rollAbility();
+        this.wisdom = Character.rollAbility();
+        this.charisma = Character.rollAbility();
         this.hitpoints = 10 + this.abilityModifier(this.constitution);
     }
 
