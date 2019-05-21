@@ -1,17 +1,18 @@
 export const toRoman = (inputN) => {
     let s = '';
-
-
-
-
     let sing = inputN % 10;
     let decs = inputN % 100;
     decs = (decs - sing) / 10;
     let hundreds = inputN % 1000;
     hundreds = (hundreds - decs * 10 - sing) / 100;
-    let thousands = Math.floor(inputN / 1000);
+    let thousands = inputN % 10000;
+    thousands = (thousands - hundreds * 100 - decs * 10 - sing) / 1000;
 
-
+    if (thousands != 0) {
+        if (thousands >= 1 && thousands <= 3) {
+            s = s + 'M'.repeat(thousands);
+        }
+    }
     if (hundreds != 0) {
         if (hundreds >= 1 && hundreds <= 3) {
             s = s + 'C'.repeat(hundreds);
@@ -23,8 +24,6 @@ export const toRoman = (inputN) => {
             s = s + 'CM'
         }
     }
-
-
     if (decs != 0) {
         if (decs >= 1 && decs <= 3) {
             s = s + 'X'.repeat(decs);
@@ -36,7 +35,6 @@ export const toRoman = (inputN) => {
             s = s + 'XC'
         }
     }
-
 
     if (sing != 0) {
         if (sing >= 1 && sing <= 3) {
