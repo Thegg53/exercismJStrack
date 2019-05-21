@@ -8,7 +8,23 @@ export const toRoman = (inputN) => {
     let decs = inputN % 100;
     decs = (decs - sing) / 10;
     let hundreds = inputN % 1000;
+    hundreds = (hundreds - decs * 10 - sing) / 100;
     let thousands = Math.floor(inputN / 1000);
+
+
+    if (hundreds != 0) {
+        if (hundreds >= 1 && hundreds <= 3) {
+            s = s + 'C'.repeat(hundreds);
+        } else if (hundreds == 4) {
+            s = s + 'CD';
+        } else if (hundreds >= 5 && hundreds <= 8) {
+            s = s + 'D' + 'C'.repeat(hundreds - 5);
+        } else {
+            s = s + 'CM'
+        }
+    }
+
+
     if (decs != 0) {
         if (decs >= 1 && decs <= 3) {
             s = s + 'X'.repeat(decs);
