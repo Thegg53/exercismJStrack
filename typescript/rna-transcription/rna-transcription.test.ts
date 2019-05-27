@@ -11,20 +11,20 @@ describe('Transcriptor', () => {
     expect(transcriptor.toRna('G')).toEqual('C')
   })
 
-  xit('transcribes adenine to uracil', () => {
+  it('transcribes adenine to uracil', () => {
     expect(transcriptor.toRna('A')).toEqual('U')
   })
 
-  xit('transcribes thymine to adenine', () => {
+  it('transcribes thymine to adenine', () => {
     expect(transcriptor.toRna('T')).toEqual('A')
   })
 
-  xit('transcribes all dna nucleotides to their rna complements', () => {
+  it('transcribes all dna nucleotides to their rna complements', () => {
     expect(transcriptor.toRna('ACGTGGTCTTAA'))
       .toEqual('UGCACCAGAAUU')
   })
 
-  xit('correctly handles invalid input', () => {
+  it('correctly handles invalid input', () => {
     expect(() => transcriptor.toRna('U')).toThrowError(
       'Invalid input DNA.'
     )
